@@ -1,0 +1,11 @@
+--- BUZZ-win-2.1/src/rpcrawtransaction.cpp    2017-10-09 01:15:31.000000000 -0700
++++ BUZZ-win-2.1/src/rpcrawtransaction_fixed.cpp    2018-01-04 10:36:31.000000000 -0800
+@@ -214,7 +214,7 @@
+             CTxDestination address;
+             if (ExtractDestination(pk, address))
+             {
+-                const CScriptID& hash = boost::get<const CScriptID&>(address);
++                const CScriptID& hash = boost::get<CScriptID>(address);
+                 CScript redeemScript;
+                 if (pwalletMain->GetCScript(hash, redeemScript))
+                     entry.push_back(Pair("redeemScript", HexStr(redeemScript.begin(), redeemScript.end())));
