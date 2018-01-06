@@ -27,7 +27,7 @@ RUN git clone https://github.com/buzzcoin-project/BUZZ.git
 RUN cd BUZZ && git checkout stabilit && git pull
 
 RUN cd BUZZ/src && \
-    make -f makefile.unix
+    USE_UPNP=1 make -f makefile.unix
 
 VOLUME ["/root/.buzzcoin"]
 
