@@ -24,9 +24,7 @@ RUN apt-get install -y libdb4.8-dev libdb4.8++-dev
 
 RUN git clone https://github.com/buzzcoin-project/BUZZ.git
 
-RUN cd BUZZ && git checkout stabilit
-
-RUN cd BUZZ && git pull
+RUN cd BUZZ && git checkout stabilit && git pull
 
 RUN cd BUZZ/src && \
     make -f makefile.unix
@@ -49,7 +47,7 @@ RUN cp /root/BUZZ/src/buzzcoind /usr/local/bin/ && \
     rm -rf /root/BUZZ && \
     rm -rf /root/cpuminer-multi
 
-EXPOSE 25128
-EXPOSE 25129
+EXPOSE 20114
+EXPOSE 20115
 
 CMD ["/usr/local/bin/startnode.sh"]

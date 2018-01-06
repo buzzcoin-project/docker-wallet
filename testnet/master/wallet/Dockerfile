@@ -38,7 +38,7 @@ RUN chmod +x /usr/local/bin/startnode.sh
 RUN cp /root/BUZZ/src/buzzcoind /usr/local/bin/ && \
     rm -rf /root/BUZZ 
 
-EXPOSE 25128
-EXPOSE 25129
+EXPOSE 20114
+EXPOSE 20115
 
 CMD ["/usr/local/bin/startnode.sh"]

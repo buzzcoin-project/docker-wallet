@@ -45,7 +45,7 @@ RUN cp /root/BUZZ/src/buzzcoind /usr/local/bin/ && \
     rm -rf /root/BUZZ && \
     rm -rf /root/cpuminer-multi
 
-EXPOSE 25128
-EXPOSE 25129
+EXPOSE 20114
+EXPOSE 20115
 
 CMD ["/usr/local/bin/startnode.sh"]
